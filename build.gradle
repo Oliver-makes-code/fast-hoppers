@@ -34,6 +34,9 @@ processResources {
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version
 	}
+	filesMatching("mixins.json") {
+		rename { "${project.archives_base_name}.mixins.json" }
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
